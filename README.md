@@ -40,6 +40,10 @@ Aşıdaki satırları sırayla komut satırında çalıştırın.
 
     php artisan serve
 
+Aşıdaki kodu komut satırında çalıştırarak testleri başlatın
+
+    php artisan test
+
 Postman Collections
 https://www.getpostman.com/collections/7e7acee0867ca44789b1
 
@@ -66,7 +70,5 @@ Postman Environment (postman AuthToken ve localBaseUrl değişkenleri için bunu
 	"_postman_exported_at": "2022-06-07T13:48:23.450Z",
 	"_postman_exported_using": "Postman/9.20.3"
     }
-
-    
 
     

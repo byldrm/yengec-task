@@ -28,7 +28,7 @@ class RegisterRequest extends FormRequest
 
         return [
             'name' => 'required|min:4',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users',
             'password' => 'required|min:8',
         ];
     }
@@ -41,6 +41,7 @@ class RegisterRequest extends FormRequest
             'name.min' => 'İsim en az 4 karakter olmalı',
             'email.required' => 'Email alanı zorunlu.',
             'email.email' => 'Email alanı email formatında olmalı.',
+            'email.unique' => 'Email adresi kullanılıyor.',
             'password.required' => 'Şifre alanı zorunlu.',
             'password.min' => 'Şifre en az 8 karakter olmalı',
         ];

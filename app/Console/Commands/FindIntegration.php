@@ -29,8 +29,8 @@ class FindIntegration extends Command
     public function handle()
     {
         $integration_id = $this->ask('Görüntülemek istediğiniz entegrasyon id sini giriniz');
-        $headers = ['id','user_id','marketplace','username','password','created_at','updated_at'];
-        $data = Integration::where('id',$integration_id)->get()->toArray();
-        $this->table($headers,$data);
+        $headers = ['id', 'user_id', 'marketplace', 'username', 'password', 'created_at', 'updated_at'];
+        $data = Integration::where('id', $integration_id)->get()->toArray();
+        $this->table($headers, $data);
     }
 }

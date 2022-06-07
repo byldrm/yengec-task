@@ -15,14 +15,13 @@ class AuthController extends BaseController
      */
     public function register(RegisterRequest $request)
     {
-
         $input = $request->all();
         $input['password'] = bcrypt($input['password']);
         $user = User::create($input);
 
-        $data['name'] =  $user->name;
+        $data['name'] = $user->name;
         $data['token'] = $user->createToken('YengecAuth')->accessToken;
-        return $this->sendResponse($data,'Kullanıcı başarıyla kaydedildi');
+        return $this->sendResponse($data, 'Kullanıcı başarıyla kaydedildi');
     }
 
     /**
@@ -37,12 +36,12 @@ class AuthController extends BaseController
 
         if (auth()->attempt($data)) {
             $user = Auth::user();
-            $success['token'] =  $user->createToken('YengecAuth')-> accessToken;
-            $success['name'] =  $user->name;
+            $success['token'] = $user->createToken('YengecAuth')->accessToken;
+            $success['name'] = $user->name;
 
             return $this->sendResponse($success, 'Kullanıcı girişi başarılı.');
         } else {
-            return $this->sendError('Unauthorised.', ['error'=>'Yetkisiz']);
+            return $this->sendError('Unauthorised.', ['error' => 'Yetkisiz']);
         }
     }
 }

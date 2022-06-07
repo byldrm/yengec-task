@@ -28,7 +28,7 @@ class CreateNewIntegration extends Command
      */
     public function handle()
     {
-        $marketplace = $this->choice('Entegrasyon adını seçiniz.',['n11','trendyol']);
+        $marketplace = $this->choice('Entegrasyon adını seçiniz.', ['n11', 'trendyol']);
         $username = $this->ask('Kullanıcı adını giriniz.');
         $password = $this->ask('Şifre Giriniz.');
         $user_id = $this->ask('Kullanıcı id sini giriniz.');

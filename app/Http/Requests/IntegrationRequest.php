@@ -27,16 +27,17 @@ class IntegrationRequest extends FormRequest
      */
     public function rules()
     {
-
-        if(request()->routeIs('integrations.store')){
+        if (request()->routeIs('integrations.store')) {
             $uniqueRule = Rule::unique('integrations')->where('user_id', Auth::id());
-        }elseif (request()->routeIs('integrations.update')){
-            $uniqueRule  = Rule::unique('integrations')->where('user_id', Auth::id())->ignore(app('request')->segment(3));
+        } elseif (request()->routeIs('integrations.update')) {
+            $uniqueRule = Rule::unique('integrations')->where('user_id', Auth::id())->ignore(
+                app('request')->segment(3)
+            );
         }
         $rules = [
-            'username'=> 'required',
-            'password'=> 'required',
-            'marketplace' =>  [
+            'username' => 'required',
+            'password' => 'required',
+            'marketplace' => [
                 'required',
                 Rule::In(['trendyol', 'n11']),
                 $uniqueRule
@@ -61,10 +62,12 @@ class IntegrationRequest extends FormRequest
 
     public function failedValidation(Validator $validator)
     {
-        throw new HttpResponseException(response()->json([
-            'success'   => false,
-            'message'   => 'Validation errors',
-            'errors'      => $validator->errors()
-        ]));
+        throw new HttpResponseException(
+            response()->json([
+                'success' => false,
+                'message' => 'Validation errors',
+                'errors' => $validator->errors()
+            ])
+        );
     }
 }

@@ -28,8 +28,8 @@ class ShowAllIntegrations extends Command
      */
     public function handle()
     {
-        $headers = ['id','user_id','marketplace','username','password','created_at','updated_at'];
+        $headers = ['id', 'user_id', 'marketplace', 'username', 'password', 'created_at', 'updated_at'];
         $data = Integration::all()->toArray();
-        $this->table($headers,$data);
+        $this->table($headers, $data);
     }
 }

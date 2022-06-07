@@ -72,3 +72,23 @@ Postman Environment (postman AuthToken ve localBaseUrl değişkenleri için bunu
     }
 
     
+Commandlar
+Entegrasyon ekleme
+
+    create:integration
+
+Entegrasyon silme 
+    
+    delete:integration
+
+Entegrasyon bulma
+
+    find:integration
+
+Entegrasyon Listeleme
+
+    show:integration
+
+Entegrasyon Güncelleme 
+
+    update:integration

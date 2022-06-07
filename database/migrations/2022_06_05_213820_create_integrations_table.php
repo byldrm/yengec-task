@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('integrations', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->enum('marketplace',array('n11,trendyol'));
+            $table->string('marketplace');
             $table->string('username',100);
             $table->string('password');
             $table->foreign('user_id')->references('id')->on('users');

@@ -45,7 +45,7 @@ Aşıdaki kodu komut satırında çalıştırarak testleri başlatın
     php artisan test
 
 Postman Collections
-https://www.getpostman.com/collections/7e7acee0867ca44789b1
+https://www.getpostman.com/collections/f066b5875a86e5a9dad7
 
 Postman Environment (postman AuthToken ve localBaseUrl değişkenleri için bunu postmane import edin.)
     
